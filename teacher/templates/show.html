@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show Student</title>
+</head>
+<body>
+	<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Address</th>
+    <th>Action</th>
+  </tr>
+  {% for i in students %}
+  <tr>
+    <td>{{i.name}}</td>
+    <td>{{i.age}}</td>
+    <td>{{i.address}}</td>
+    <td><a href= "{% url 'delete' i.id %}">Delete</a></td>
+    <td><a href="{% url 'update' i.id %}">Update</a></td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>
